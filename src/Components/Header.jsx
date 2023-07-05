@@ -1,9 +1,15 @@
 import "../Components/style.css"
 import { Link } from 'react-router-dom';
+import { MyContext } from "../MyContext";
 
 
 
 export default function Header(){
+
+const {darkmode} = useContext(MyContext)
+const {setDarkmode} = useContext(MyContext)
+
+
     return(
     <div>
         <header className="header">
@@ -18,7 +24,7 @@ export default function Header(){
                     </li>
                 </ul>
             </nav>
-            <button>Dark mode</button>
+            <button ocClick = {() => setDarkmode(!darkmode)}>Dark mode</button>
         </header>
     </div>
     )
